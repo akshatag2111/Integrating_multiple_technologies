@@ -1,0 +1,176 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+   location.replace("http://localhost/index2.html")
+}
+</script>
+<style>
+body {
+    background-image: url("img/doc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header{
+      text-align: center;
+      color: black;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: fantasy;
+  }
+
+  .button{
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .button:hover {background-color: grey}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+   <h1><b>DOCKER</b></h1>
+   </div>
+
+<center><button onclick="goBack()" class="button">Back to Main Menu</button></center>
+
+
+<div style="margin-top: 30px">
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+                        <div class="column">
+                            <h3> Configure Docker</h3>
+                            <input type="hidden" name="choice" value="1">
+                            <button class="button" name="btn" value="stbtn" style="margin-top: 15px;" type="submit">Start Docker</button>
+
+</form>
+<form action="http://localhost/cgi-bin/docker.py" method="POST">
+                            <h3> Docker Service</h3>
+                            <input type="radio" name="state" value="start" class="radio" id="radio">
+                            <label for="start">Start</label>
+                            <input type="radio" name="state" value="stop" class="radio" id="radio">
+                            <input type="hidden" name="choice" value="2">
+                            <label for="stop">Stop</label><br>
+                            <button class="button" name="btn" value="stbtn" style="margin-top: 15px;" type="submit">Submit</button>
+                        </div>
+</form>
+<form action="http://localhost/cgi-bin/docker.py" method="POST">
+                        <div class ="column">
+                            <h3>Service Status</h3>
+                            <input type="hidden" name="choice" value="3">
+                            <button class="button" name="btn" value="stbtn" style="margin-top: 15px;" type="submit">See Status</button>
+
+
+</form>
+<form action="http://localhost/cgi-bin/docker.py" method="POST">
+
+                          <h3>List All Running Containers</h3>
+                          <input type="hidden" name="choice" value="6">
+                          <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Running Containers</button>
+                        </div>
+</form>
+
+
+
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+                        <h3>List Docker Images</h3>
+                        <input type="hidden" name="choice" value="4">
+
+                        <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>See list of Images</button>
+</form>
+
+
+
+<form action="http://localhost/cgi-bin/docker.py" method="POST">
+                        <h3>List All Container</h3>
+                        <input type="hidden" name="choice" value="5">
+                        <button type="submit"  class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>See All Containers</button>
+        </div>
+</form>
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+
+                    <h3>Launch New Container</h3>
+                    <input type="text" Placeholder="Enter Image Name" name="image" class="input" style="width: 85%;margin-bottom:15px">
+                    <input type="text" Placeholder="Enter OS Name" name="osname" class="input"  style="width: 85%;margin-bottom:15px">
+                    <input type="hidden" name="choice" value="13">
+                    <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Launch Container</button>
+
+
+
+        </div>
+</form>
+
+
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+
+                    <h3>Pull Image From Docker Hub</h3>
+                    <input type="text" Placeholder="Enter Image Name" name="image" class="input" style="width: 85%;margin-bottom:15px">
+                    <input type="text" Placeholder="Enter Image Tag" name="tag" class="input" id="mytext" style="width: 85%;margin-bottom:15px">
+                    <input type="hidden" name="choice" value="7">
+                    <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Pull Image</button>
+
+
+
+        </div>
+</form>
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+                <h3>Start/Stop Conatiner</h3>
+                    <input type="text" placeholder="Enter the Conatiner Name" name="container" class="input" style="width: 85%;margin-bottom:15px">
+                    <hr>
+                    <input type="radio" name="state" value="start" class="radio">
+                    <label for="male">Start</label><br>
+                    <input type="radio" name="state" value="stop" class="radio">
+                    <input type="hidden" name="choice" value="9">
+                    <label for="male">Stop</label><br>
+                    <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Submit</button>
+
+
+        </div>
+</form>
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+                 <h3>Remove an Image or All Images</h3>
+                    <input type="text" Placeholder="Enter name of Image" name="image" class="input" style="width: 85%;margin-bottom:15px">
+                    <input type="text" Placeholder="Enter name of Tag" name="tag" class="input" style="width: 85%;margin-bottom:15px">
+                    <input type="hidden" name="choice" value="10">
+                    <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Remove Image</button>
+
+        </div>
+</form>
+
+<form method="post" action="http://localhost/cgi-bin/docker.py">
+        <div class="column">
+                 <h3>Remove a Conatiner or All Containers</h3>
+                <input type="text" Placeholder="Enter name of Container" name="container" class="input" style="width: 85%;margin-bottom:15px">
+                <input type="hidden" name="choice" value="11">
+                <button type="submit" class="button" name="btn" value="rmallbtn" style="margin-top: 15px; margin-bottom: 15px";>Remove Conatiner</button>
+
+
+        </div>
+</form>
+</div>
+</body>
+</html>
