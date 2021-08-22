@@ -1,0 +1,143 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+   location.replace("http://localhost/index2.html")
+}
+</script>
+<style>
+body {
+    background-image: url("img/doc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header{
+      text-align: center;
+      color: black;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: fantasy;
+  }
+
+  .button{
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .button:hover {background-color: grey}
+
+
+</style>
+</head>
+<body>
+
+    <div class="header">
+    <h1><b>Amazon Web Services</b></h1>
+    </div>
+
+    <center><button onclick="goBack()" class="button">Back to Main Menu</button></center>
+    <div style="margin-top: 30px">
+
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Create a Key Pair</h3>
+            <input type="text" name="key" placeholder="Enter the Key Name" class="fill">
+            <input type="hidden" name="choice" value="1">
+            <button class="button" type="submit">Create Key Pair</button>
+        </div>
+    </form>
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Create a Security Group</h3>
+            <input type="text" name="sg" placeholder="Enter The secuirty Group Name" class="fill">
+            <input type="text" name="Type" placeholder="Enter Discription" class="fill">
+            <input type="hidden" name="choice" value="2">
+            <button class="button" id="btn" type="submit">Create SG</button>
+        </div>
+    </form>
+
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Create an EBS Volume</h3>
+            <input type="text" name="volume" placeholder="Provide AZ name To Create New Volume " class="fill">
+            <input type="text" name="size" placeholder="Provide size To New Volume(K/M/G)" class="fill">
+            <input type="hidden" name="choice" value="4">
+            <button class="button" type="submit">Create EBS Volume</button>
+        </div>
+    </form>
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Attach EBS Volume</h3>
+            <input type="text" name="vid" placeholder="Give Volume ID " class="fill">
+            <input type="text" name="iid" placeholder="Give Instance ID" class="fill">
+            <input type="text" name="volume" placeholder="Give Name To Volume " class="fill">
+            <input type="hidden" name="choice" value="5">
+            <button class="button" type="submit">Attach Volume To Instance</button>
+        </div>
+    </form>
+
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Create S3 Bucket</h3>
+            <input type="text" name="bucket" placeholder="Enter Bucket Name " class="fill">
+            <input type="text" name="region" placeholder="Enter region" class="fill">
+            <input type="hidden" name="choice" value="6">
+            <button class="button" type="submit">create bucket</button>
+        </div>
+    </form>
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Create cloud front </h3>
+            <input type="text" name="buck" placeholder="Enter Bucket Name " class="fill">
+            <input type="text" name="obj" placeholder="Enter object name" class="fill">
+            <input type="hidden" name="choice" value="7">
+            <button class="button" type="submit">create cloud front</button>
+        </div>
+    </form>
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Upload object to S3 </h3>
+            <input type="text" name="buck" placeholder="Enter Bucket Name " class="fill">
+            <input type="text" name="obj" placeholder="Enter object name" class="fill">
+            <input type="hidden" name="choice" value="8">
+            <button class="button" type="submit">Upload Object</button>
+        </div>
+    </form>
+
+    <form action="http://localhost/cgi-bin/aws.py">
+        <div class="column">
+            <h3>Launch an Instance</h3>
+            <input type="text" name="image" placeholder="Type image Id For Instance Launch" class="fill">
+            <input type="text" name="name" placeholder="Give The Name To New Instance" class="fill">
+            <input type="text" name="az" placeholder="Give AZ name" class="fill">
+            <input type="text" name="Type" placeholder="Enter The Instance Type(default t2 micro)" class="fill">
+            <input type="text" name="key" placeholder="Provide The Key Pair To New Instance I" class="fill">
+            <input type="text" name="sg" placeholder="Provide Security Group To New Instance" class="fill">
+            <input type="hidden" name="choice" value="3">
+            <button class="button" type="submit">Launch Instance</button>
+        </div>
+    </form>
+
+    </div>
+
+</body>
+
+</html>

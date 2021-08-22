@@ -1,0 +1,70 @@
+<html>
+<head>
+<script>
+  function goBack(){
+    location.replace("http://localhost/index2.html")
+  }
+
+</script>
+
+<style>
+body {
+    background-image: url("img/lin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+  input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    background-color: black;
+    font-size: large;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  input[type=text]:focus {
+    background-color: lightslategrey;
+  }
+
+  .button{
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .button:hover {background-color: grey}
+
+
+</style>
+</head>
+<body>
+      <div class="header">
+              <h1><center><b>LINUX</b></center></h1>
+      </div>
+
+      <form method="post"  action="http://localhost/cgi-bin/linux.py">
+
+      <center><input name="task" type="text" placeholder="Enter your Command..." style="width:40%"/></center>
+      <center><h2><button type="submit" class="button" style="width: 15%;"> Enter</button></h2></center>
+      </form>
+
+      <h2><center><button onclick="goBack()" class="button">Back To Main Menu</button></center></h2>
+
+</body>
+</html>

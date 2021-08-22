@@ -1,0 +1,157 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+   location.replace("http://localhost/index2.html")
+}
+</script>
+<style>
+body {
+    background-image: url("img/doc.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header{
+      text-align: center;
+      color: black;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: fantasy;
+  }
+
+  .button{
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .button:hover {background-color: grey}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+        <h1><b>PARTITION</b></h1>
+   </div>
+
+<center><button onclick="goBack()" class="button">Back to Main Menu</button></center>
+
+
+<div style="margin-top: 30px">
+<form action="http://localhost/cgi-bin/lvmapi.py">
+                <div class="column">
+
+                   <h4>See The Device Information</h4>
+                   <label for="Node" >fdisk -l</label>
+                   <input type="radio" value="Start" class="radio" name="node" style="width: 85%;margin-bottom:15px" >
+                   <input type="hidden" name="choice" value="1">
+                   <button class="button" type="submit" class="mbtn" name="btn">Submit</button>
+                </div>
+
+
+</form>
+
+<form action="http://localhost/cgi-bin/lvmapi.py">
+           <div class="column">
+
+
+               <h4>Create Physical Volume</h4>
+               <input type="text" name="disk1" placeholder="Enter Disk Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="2">
+               <button class="button" type="submit" class="mbtn" name="btn">Create PV</button>
+           </div>
+</form>
+<form action="http://localhost/cgi-bin/lvmapi.py">
+          <div class="column">
+
+               <h4>Create Volume Group</h4>
+               <input type="text" name="vg" placeholder="Enter Name For VG: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="disk1" placeholder="Enter First Disk Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="disk2" placeholder="Enter Second Disk Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="3">
+               <button class="button" type="submit" class="mbtn" name="btn">Create VG</button>
+           </div>
+
+</form>
+
+<form action="http://localhost/cgi-bin/lvmapi.py">
+             <div class="column">
+
+
+               <h4>Create Logical Volume</h4>
+               <input type="text" name="lvsize" placeholder="Enter Size For LV: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="lv" placeholder="Enter LV Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="vg" placeholder="Enter VG Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="4">
+               <button class="button" type="submit" class="mbtn" name="btn">Create LV</button>
+             </div>
+
+</form>
+<form action="http://localhost/cgi-bin/lvmapi.py">
+          <div class="column">
+
+               <h4>Format Logical Volume</h4>
+               <input type="text" name="vg" placeholder="Enter VG Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="lv" placeholder="Enter LV Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="5">
+               <button class="button" type="submit" class="mbtn" name="btn">Format LV</button>
+          </div>
+</form>
+
+<form action="http://localhost/cgi-bin/lvmapi.py">
+         <div class="column">
+
+
+               <h4>Mount Logical Volume</h4>
+               <input type="text" name="fold" placeholder="Enter Folder Name : " class="fill" style="width: 85%;margin-bottom:15px" >
+
+               <input type="text" name="lv" placeholder="Enter LV Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="vg" placeholder="Enter VG Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="6">
+               <button  class="button" type="submit" class="mbtn" name="btn">Mount LV</button>
+
+
+         </div>
+</form>
+
+<form action="http://localhost/cgi-bin/lvmapi.py">
+         <div class="column">
+
+
+               <h4>Extend Logical Volume Size</h4>
+               <input type="text" name="exsize" placeholder="Enter Size: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="vg" placeholder="Enter VG Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="lv" placeholder="Enter LV Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="7">
+               <button class="button" type="submit" class="mbtn" name="btn">Extend LV</button>
+          </div>
+</form>
+
+<form action="http://localhost/cgi-bin/lvmapi.py">
+         <div class="column">
+
+
+               <h4>Format Extended Partation</h4>
+               <input type="text" name="vg" placeholder="Enter VG Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="text" name="lv" placeholder="Enter LV Name: " class="fill" style="width: 85%;margin-bottom:15px" >
+               <input type="hidden" name="choice" value="8">
+               <button class="button" type="submit" class="mbtn" name="btn">Format New Partation</button>
+         </div>
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+  location.replace("http://localhost/index2.html")
+}
+</script>
+<style>
+  body {
+    background-image: url("img/2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header{
+      text-align: center;
+      color: black;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: fantasy;
+  }
+
+  .button{
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .button:hover {background-color: grey}
+
+
+  </style>
+  </head>
+  <body>
+      <div class="header">
+          <h1><b>KUBERNETES</b></h1>
+          </div>
+<center><button onclick="goBack()" class="button">Back to Main Menu</button></center>
+
+<div style="margin-top: 30px">
+
+
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Create Deployment</h3>
+                <input type="text" name="dname" placeholder="Enter Deployment Name :" class="input" style="width: 85%;margin-bottom:10px" /></br>
+                 <input type="text" name="image" placeholder="Enter Image Name :" class="input" style="width: 85%;margin-bottom:10px" /></br>
+</h3>
+                <input type="hidden" name="choice" value="1">
+                <button type="submit"  class="button" name="btn"  style="margin-top: 15px;">Create Deployment</button>
+        </div>
+</form>
+
+<form action="http://localhost/cgi-bin/kube.py" method="POST">
+        <div class="column">
+                <h3>List Out ALL Pods</h3>
+                <input type="radio"  class="radio">
+                <label for="deploy">Get Pod</label>
+                <input type="hidden" name="choice" value="2"></br>
+                <button type="submit"  class="button" name="btn"  style="margin-top: 15px;">Submit</button>
+         </div>
+</form>
+
+
+
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Delete All Envirnoment</h3>
+                <input type="radio"  class="radio">
+                <label for="deploy">Delete All Env</label>
+                <input type="hidden" name="choice" value="6">
+                <button class="button" type="submit" name="btn"  style="margin-top: 15px;">Delete All Envirnoment</button>
+
+
+        </div>
+</form>
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Scale The Deployment </h3>
+                <input type="text" name="dname" placeholder="Enter Deployment Name" class="input" style="width: 85%;" />
+                <input type="text" name="rno" placeholder="Enter Replica Number" class="input" style="width: 85%;" />
+                <input type="hidden" name="choice" value="4">
+                <button class="button" name="btn"  style="margin-top: 15px;">Scale Deployment</button>
+
+
+        </div>
+</form>
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Delete Deployment</h3>
+                <input type="text" name="dname" placeholder="Enter Deployment Name" class="input" style="width: 85%;" />
+
+                <input type="hidden" name="choice" value="5">
+                <button class="button" name="btn"  style="margin-top: 15px;">Delete Deployment</button>
+
+
+        </div>
+</form>
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Describe The Pod</h3>
+                <input type="text" name="pname" placeholder="Enter Pod Name" class="input" style="width: 85%;" />
+
+                <input type="hidden" name="choice" value="7">
+                <button class="button" name="btn"  style="margin-top: 15px;">Describe Pod</button>
+
+
+        </div>
+</form>
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Create New Pod</h3>
+                <input type="text" name="pname" placeholder="Enter Pod Name" class="input" style="width: 85%;" />
+                <input type="text" name="image" placeholder="Enter Image Name" class="input" style="width: 85%;" />
+
+                <input type="hidden" name="choice" value="8">
+                <button class="button" name="btn"  style="margin-top: 15px;">Create Pod</button>
+
+
+        </div>
+</form>
+<form method="post" action="http://localhost/cgi-bin/kube.py">
+        <div class="column">
+                <h3>Delete The Pod</h3>
+                <input type="text" name="pname" placeholder="Enter Pod Name" class="input" style="width: 85%;" />
+
+                <input type="hidden" name="choice" value="9">
+                <button class="button" name="btn"  style="margin-top: 15px;">Delete Pod</button>
+
+
+        </div>
+</form>
+
+<form action="http://localhost/cgi-bin/kube.py" method="POST">
+        <div class="column">
+                <h3>List Out ALL deployments</h3>
+                <input type="radio"  class="radio">
+                <label for="deploy">Get Deployment</label>
+                <input type="hidden" name="choice" value="10"></br>
+                <button type="submit"  class="button" name="btn"  style="margin-top: 15px;">Submit</button>
+        </div>
+
+</form>
+<form action="http://localhost/cgi-bin/kube.py" method="POST">
+        <div class="column">
+                <h3>List Out ALL Services</h3>
+                <input type="radio"  class="radio">
+                <label for="deploy">Get Service</label>
+                <input type="hidden" name="choice" value="11"></br>
+                <button type="submit"  class="button" name="btn"  style="margin-top: 15px;">Submit</button>
+         </div>
+</form>
+
+
+</div>
+</body>
+</html>
